@@ -1,3 +1,10 @@
 export 'home.dart';
 export 'package:notas_app/values/tema.dart';
 export 'package:notas_app/models/nota.dart';
+export 'package:notas_app/pages/new_nota.dart';
+export 'package:notas_app/services/userservies.dart';
+export 'package:notas_app/pages/home.dart';
+export 'package:notas_app/services/app_sate.dart';
+export 'package:firebase_database/firebase_database.dart';
+export 'package:flutter/material.dart';
+export 'package:provider/src/provider.dart';
