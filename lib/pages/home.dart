@@ -32,9 +32,17 @@ class _HomePageState extends State<HomePage> {
               children: [
                 for (Nota nota in misnotas)
                   ListTile(
-                    title: Text(nota.titulo!),
-                    subtitle: Text(nota.contenido!),
-                  ),
+                      title: Text(nota.titulo!),
+                      subtitle: Text(nota.contenido!),
+                      trailing: IconButton(
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.red[200],
+                        ),
+                        onPressed: () {
+                          estado!.deleteNota(nota.key!);
+                        },
+                      )),
                 Column(),
               ],
             );

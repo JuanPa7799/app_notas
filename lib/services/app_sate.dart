@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -34,6 +32,17 @@ class AppState with ChangeNotifier {
     } catch (e) {
       print("Error");
       return _notas;
+    }
+  }
+
+  Future<void> deleteNota(String key) async {
+    try {
+      bool respuesta = await UserServices().eliminarNota(key);
+      if (respuesta) {
+        notifyListeners();
+      }
+    } catch (e) {
+      print(e);
     }
   }
 }

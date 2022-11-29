@@ -71,4 +71,14 @@ class UserServices {
       return false;
     }
   }
+
+  Future<bool> eliminarNota(String key) async {
+    try {
+      await FirebaseDatabase.instance.ref().child('notas').child(key).remove();
+      return true;
+    } catch (e) {
+      print(e);
+      return false;
+    }
+  }
 }
